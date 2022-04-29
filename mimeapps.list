@@ -1,0 +1,32 @@
+[Added Associations]
+text/plain=wps-office-pdf.desktop;org.gnome.gedit.desktop;xed.desktop;
+application/pdf=wps-office-pdf.desktop;libreoffice-draw.desktop;org.gnome.Evince.desktop;org.pwmt.zathura-pdf-poppler.desktop;google-chrome.desktop;
+x-scheme-handler/http=xfce4-web-browser.desktop;
+x-scheme-handler/https=xfce4-web-browser.desktop;
+application/xhtml+xml=google-chrome.desktop;
+text/csv=wps-office-et.desktop;
+x-scheme-handler/tg=userapp-Telegram Desktop-9IW0I1.desktop;
+audio/mpeg=vlc.desktop;
+audio/x-opus+ogg=vlc.desktop;
+video/webm=vlc.desktop;
+video/mp4=smplayer.desktop;smplayer_enqueue.desktop;vlc.desktop;
+text/x-python=visual-studio-code.desktop;
+image/png=viewnior.desktop;
+image/jpeg=viewnior.desktop;
+application/x-ipynb+json=visual-studio-code.desktop;
+
+[Default Applications]
+x-scheme-handler/msteams=teams.desktop
+text/html=google-chrome.desktop
+x-scheme-handler/http=xfce4-web-browser.desktop
+x-scheme-handler/https=xfce4-web-browser.desktop
+x-scheme-handler/about=google-chrome.desktop
+x-scheme-handler/unknown=google-chrome.desktop
+application/xhtml+xml=google-chrome.desktop
+application/pdf=google-chrome.desktop
+text/csv=wps-office-et.desktop
+text/plain=xed.desktop
+x-scheme-handler/tg=userapp-Telegram Desktop-9IW0I1.desktop
+image/png=viewnior.desktop
+image/jpeg=viewnior.desktop
+x-scheme-handler/webcal=google-chrome.desktop

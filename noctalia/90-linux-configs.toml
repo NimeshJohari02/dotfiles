@@ -1,0 +1,13 @@
+# Dock pins and DDC/CI brightness support for the Acer external display.
+[dock]
+enabled = true
+pinned = ["com.microsoft.VSCode", "zen"]
+auto_hide = true
+reserve_space = false
+show_dots = true
+
+[brightness]
+enable_ddcutil = true
+
+[brightness.monitor.HDMI-A-1]
+backend = "ddcutil"

@@ -14,3 +14,6 @@ This directory contains a split Niri config for CachyOS with Noctalia. To use it
 Niri's config has `focus-follows-mouse` enabled, so moving the pointer to another monitor moves focus there. No keyboard shortcut is currently assigned to focus another monitor without moving a window. From a terminal, run `niri msg action focus-monitor-left` or `niri msg action focus-monitor-right` to focus the adjacent monitor; those actions can also be bound to keys.
 
 The main file is `config.kdl`; it includes the settings in `cfg/`. Niri reloads valid config edits automatically. Check the config with `niri validate`.
+
+`cfg/autostart.kdl` starts Noctalia and the KDE Connect background daemon at login.
+See [Noctalia setup](../noctalia/README.md) to enable the phone tile on `Super + S`.

@@ -1,0 +1,28 @@
+[idle]
+behavior_order = ["battery-suspend", "screen-off", "suspend"]
+pre_action_fade_seconds = 2.0
+
+[idle.behavior.battery-suspend]
+enabled = true
+timeout = 900
+action = "command"
+command = "bash ~/.local/bin/noctalia-idle-battery-suspend"
+resume_command = "niri msg action power-on-monitors"
+
+[idle.behavior.screen-off]
+enabled = true
+timeout = 1800
+action = "screen_off"
+
+[idle.behavior.suspend]
+enabled = true
+timeout = 1800
+action = "suspend"
+lock_before_suspend = false
+
+# Preserve the current lockscreen preference; these defaults were disabled.
+[idle.behavior.lock]
+enabled = false
+
+[idle.behavior.lock-and-suspend]
+enabled = false

@@ -10,7 +10,7 @@ http_port=56349
 use_same=y
 
 # use auth is 'y' or 'n', and provide username and password
-use_auth=n
+use_auth=nn
 username=
 password=
 

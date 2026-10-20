@@ -95,8 +95,6 @@ local mediaplayer       = "vlc"
 local terminal          = "alacritty"
 local virtualmachine    = "virtualbox"
 
--- Spotify widget
-local todo_widget = require("awesome-wm-widgets.todo-widget.todo")
 -- awesome variables
 awful.util.terminal = terminal
 --awful.util.tagnames = {  "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" }
@@ -133,24 +131,6 @@ awful.layout.layouts = {
     --lain.layout.termfair,
     --lain.layout.termfair.center,
 }
-
-
-awful.util.taglist_buttons = my_table.join(
-    awful.button({ }, 1, function(t) t:view_only() end),
-    awful.button({ modkey }, 1, function(t)
-        if client.focus then
-            client.focus:move_to_tag(t)
-        end
-    end),
-    awful.button({ }, 3, awful.tag.viewtoggle),
-    awful.button({ modkey }, 3, function(t)
-        if client.focus then
-            client.focus:toggle_tag(t)
-        end
-    end),
-    awful.button({ }, 4, function(t) awful.tag.viewnext(t.screen) end),
-    awful.button({ }, 5, function(t) awful.tag.viewprev(t.screen) end)
-)
 
 
 awful.util.tasklist_buttons = my_table.join(
@@ -218,6 +198,7 @@ awful.util.mymainmenu = freedesktop.menu.build({
     after = {
         { "Terminal", terminal },
         { "Log out", function() awesome.quit() end },
+        { "Lock Screen", "i3lock -c 000000" },
         { "Sleep", "systemctl suspend" },
         { "Restart", "systemctl reboot" },
         { "Shutdown", "systemctl poweroff" },
@@ -368,6 +349,9 @@ globalkeys = my_table.join(
         {description = "Xfce settings manager", group = "alt+ctrl"}),
     awful.key({ modkey1, altkey   }, "p", function() awful.util.spawn( "pamac-manager" ) end,
         {description = "Pamac Manager", group = "alt+ctrl"}),
+
+    awful.key({ modkey1, altkey   }, "l", function() awful.util.spawn( "i3lock -c 000000" ) end,
+        {description = "Lock Screen  ", group = "alt+ctrl"}),
 
     -- alt + ...
     --awful.key({ altkey }, "F3", function () awful.util.spawn( "xfce4-appfinder" ) end,

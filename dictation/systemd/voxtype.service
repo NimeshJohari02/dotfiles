@@ -1,0 +1,14 @@
+[Unit]
+Description=Keyboard dictation with local Phonon-2
+Requires=phonon-server.service
+After=phonon-server.service graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=%h/.local/bin/voxtype daemon
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=graphical-session.target

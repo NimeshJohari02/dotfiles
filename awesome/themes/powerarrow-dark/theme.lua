@@ -427,11 +427,8 @@ function theme.at_screen_connect(s)
             wibox.container.background(s.mylayoutbox, theme.bg_focus),
             arrl_dl,
             logout_menu_widget{
-                onlock=function() awful.spawn.with_shell("i3lock  -p win -i ~/Pictures/original.jpg") end
-            },
---             logout_menu_widget{
---                 onlogout=function() awful.spawn.with_shell("awesome.quit()") end
---             }
+                onlogout=function() awful.spawn.with_shell("awesome.quit()") end
+            }
         },
     }
 end

@@ -1,0 +1,40 @@
+{
+    "currentIndex": 0,
+    "tabs": [
+        {
+            "checkerIndex": 0,
+            "customCheckers": [
+            ],
+            "customCompileCommand": "",
+            "customTimeLimit": -1,
+            "editorAnchor": 3001,
+            "editorCursor": 3001,
+            "editorText": "// Problem: Three Arrays\n// Contest: CodeChef - CodeChef Starters 36 Division 3(Rated)\n// URL: https://www.codechef.com/START36C/problems/ARR3\n// Memory Limit: 256 MB\n// Time Limit: 1000 ms\n//\n// Powered by CP Editor (https://cpeditor.org)\n\n#pragma GCC optimize(\"O3\")\n#pragma GCC target(\"sse4\")\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\ntypedef long long ll;\ntypedef long double ld;\ntypedef complex<ld> cd;\n\ntypedef pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef pair<ld, ld> pd;\n\ntypedef vector<int> vi;\ntypedef vector<ld> vd;\ntypedef vector<ll> vl;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<cd> vcd;\n\ntemplate <class T>\nusing pq = priority_queue<T>;\ntemplate <class T>\nusing pqg = priority_queue<T, vector<T>, greater<T>>;\n\n#define foab(i, a, b) for (int i = a; i < (b); i++)\n#define fora(i, a) for (int i = 0; i < (a); i++)\n#define forabd(i, a, b) for (int i = (b)-1; i >= a; i--)\n#define forad(i, a) for (int i = (a)-1; i >= 0; i--)\n#define trav(a, x) for (auto &a : x)\n#define uid(a, b) uniform_int_distribution<int>(a, b)(rng)\n\n#define sz(x) (int)(x).size()\n#define mp make_pair\n#define pb push_back\n#define f first\n#define s second\n#define lb lower_bound\n#define ub upper_bound\n#define all(x) x.begin(), x.end()\n#define ins insert\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return a < b ? a = b, 1 : 0;\n}\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\nconst int MOD = 1000000007;\nconst char nl = '\\n';\nconst int MX = 100001;\n// ll rec(int i, vl &a, vl &b, vl &c, ll k1, ll k2,\n// vector<vector<vector<ll>>> &dp) {\n// if (i < 0) return 0;\n// ll froma = 0, fromb = 0, fromc = 0;\n// if (dp[i][k1][k2] != -1) return dp[i][k1][k2];\n// if (k1) {\n// froma = a[i] + rec(i - 1, a, b, c, k1 - 1, k2, dp);\n// }\n// if (k2) {\n// fromb = b[i] + rec(i - 1, a, b, c, k1, k2 - 1, dp);\n// }\n// fromc = c[i] + rec(i - 1, a, b, c, k1, k2, dp);\n// return dp[i][k1][k2] = max(max(froma, fromb), fromc);\n// }\nvoid solve() {\n  ll n;\n  cin >> n;\n  vl a, b, c;\n  ll temp;\n  fora(i, n) {\n    cin >> temp;\n    a.pb(temp);\n  }\n  fora(i, n) {\n    cin >> temp;\n    b.pb(temp);\n  }\n\n  fora(i, n) {\n    cin >> temp;\n    c.pb(temp);\n  }\n  ll k1, k2;\n  cin >> k1 >> k2;\n  ll t1 = k1;\n  ll t2 = k2;\n  k1++;\n  k2++;\n  vector<vector<vector<ll>>> dp(\n      n, vector<vector<ll>>(n + 1, vector<ll>(n + 1, 0)));\n  for (int i = 1; i <= n - 1; i++) {\n    for (; k1 >= 1; k1--) {\n      for (; k2 >= 1; k2--) {\n        // cout << \"i = \" << i << \"  k1 = \" << k1 << \" k2 =  \" << k2 << endl;\n        ll froma = 0, fromb = 0, fromc = 0;\n        if (k1 > 1) {\n          froma = a[i] + dp[i - 1][k1 - 1][k2];\n        }\n        if (k2 > 1) {\n          fromb = b[i] + dp[i - 1][k1][k2 - 1];\n        }\n        fromc = c[i] + dp[i - 1][k1][k2];\n        dp[i][k1][k2] = max(max(froma, fromb), fromc);\n      }\n    }\n  }\n  for (auto &it : dp) {\n    for (auto &iit : it) {\n      for (auto &iiit : iit) {\n        cout << iiit << \"  \";\n      }\n      cout << endl;\n    }\n    cout << endl;\n  }\n}\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  cin.exceptions(cin.failbit);\n  int n, temp, q, x, y, z, t;\n  cin >> t;\n  while (t--) {\n    solve();\n  }\n  return 0;\n}\n",
+            "expected": [
+                "36\n203\n"
+            ],
+            "filePath": "/home/nimesh/WorkDir/Dev/C++Project/CodeChef/ARR3.cpp",
+            "horizontalScrollBarValue": 0,
+            "input": [
+                "2\n4\n10 4 8 5\n9 7 6 6\n5 5 7 11\n2 1\n5\n12 44 32 12 32\n43 32 12 32 31\n34 12 43 23 41\n3 4\n"
+            ],
+            "isLanguageSet": true,
+            "language": "C++",
+            "problemURL": "https://www.codechef.com/START36C/problems/ARR3",
+            "savedText": "// Problem: Three Arrays\n// Contest: CodeChef - CodeChef Starters 36 Division 3(Rated)\n// URL: https://www.codechef.com/START36C/problems/ARR3\n// Memory Limit: 256 MB\n// Time Limit: 1000 ms\n//\n// Powered by CP Editor (https://cpeditor.org)\n\n#pragma GCC optimize(\"O3\")\n#pragma GCC target(\"sse4\")\n\n#include <bits/stdc++.h>\n\nusing namespace std;\n\ntypedef long long ll;\ntypedef long double ld;\ntypedef complex<ld> cd;\n\ntypedef pair<int, int> pi;\ntypedef pair<ll, ll> pl;\ntypedef pair<ld, ld> pd;\n\ntypedef vector<int> vi;\ntypedef vector<ld> vd;\ntypedef vector<ll> vl;\ntypedef vector<pi> vpi;\ntypedef vector<pl> vpl;\ntypedef vector<cd> vcd;\n\ntemplate <class T>\nusing pq = priority_queue<T>;\ntemplate <class T>\nusing pqg = priority_queue<T, vector<T>, greater<T>>;\n\n#define foab(i, a, b) for (int i = a; i < (b); i++)\n#define fora(i, a) for (int i = 0; i < (a); i++)\n#define forabd(i, a, b) for (int i = (b)-1; i >= a; i--)\n#define forad(i, a) for (int i = (a)-1; i >= 0; i--)\n#define trav(a, x) for (auto &a : x)\n#define uid(a, b) uniform_int_distribution<int>(a, b)(rng)\n\n#define sz(x) (int)(x).size()\n#define mp make_pair\n#define pb push_back\n#define f first\n#define s second\n#define lb lower_bound\n#define ub upper_bound\n#define all(x) x.begin(), x.end()\n#define ins insert\n\ntemplate <class T>\nbool ckmin(T &a, const T &b) {\n  return b < a ? a = b, 1 : 0;\n}\ntemplate <class T>\nbool ckmax(T &a, const T &b) {\n  return a < b ? a = b, 1 : 0;\n}\n\nmt19937 rng(chrono::steady_clock::now().time_since_epoch().count());\n\nconst int MOD = 1000000007;\nconst char nl = '\\n';\nconst int MX = 100001;\n// ll rec(int i, vl &a, vl &b, vl &c, ll k1, ll k2,\n// vector<vector<vector<ll>>> &dp) {\n// if (i < 0) return 0;\n// ll froma = 0, fromb = 0, fromc = 0;\n// if (dp[i][k1][k2] != -1) return dp[i][k1][k2];\n// if (k1) {\n// froma = a[i] + rec(i - 1, a, b, c, k1 - 1, k2, dp);\n// }\n// if (k2) {\n// fromb = b[i] + rec(i - 1, a, b, c, k1, k2 - 1, dp);\n// }\n// fromc = c[i] + rec(i - 1, a, b, c, k1, k2, dp);\n// return dp[i][k1][k2] = max(max(froma, fromb), fromc);\n// }\nvoid solve() {\n  ll n;\n  cin >> n;\n  vl a, b, c;\n  ll temp;\n  fora(i, n) {\n    cin >> temp;\n    a.pb(temp);\n  }\n  fora(i, n) {\n    cin >> temp;\n    b.pb(temp);\n  }\n\n  fora(i, n) {\n    cin >> temp;\n    c.pb(temp);\n  }\n  ll k1, k2;\n  cin >> k1 >> k2;\n  ll t1 = k1;\n  ll t2 = k2;\n  k1++;\n  k2++;\n  vector<vector<vector<ll>>> dp(\n      n, vector<vector<ll>>(n + 1, vector<ll>(n + 1, 0)));\n  for (int i = 1; i <= n - 1; i++) {\n    for (; k1 >= 1; k1--) {\n      for (; k2 >= 1; k2--) {\n        // cout << \"i = \" << i << \"  k1 = \" << k1 << \" k2 =  \" << k2 << endl;\n        ll froma = 0, fromb = 0, fromc = 0;\n        if (k1 > 1) {\n          froma = a[i] + dp[i - 1][k1 - 1][k2];\n        }\n        if (k2 > 1) {\n          fromb = b[i] + dp[i - 1][k1][k2 - 1];\n        }\n        fromc = c[i] + dp[i - 1][k1][k2];\n        dp[i][k1][k2] = max(max(froma, fromb), fromc);\n      }\n    }\n  }\n  for (auto &it : dp) {\n    for (auto &iit : it) {\n      for (auto &iiit : iit) {\n        cout << iiit << \"  \";\n      }\n      cout << endl;\n    }\n    cout << endl;\n  }\n}\nint main() {\n  cin.tie(0)->sync_with_stdio(0);\n  cin.exceptions(cin.failbit);\n  int n, temp, q, x, y, z, t;\n  cin >> t;\n  while (t--) {\n    solve();\n  }\n  return 0;\n}\n",
+            "testCaseSplitterStates": [
+                [
+                    239,
+                    240,
+                    239
+                ]
+            ],
+            "testcasesIsShow": [
+                true
+            ],
+            "timestamp": 1651080616647,
+            "untitledIndex": 1,
+            "verticalScrollbarValue": 2469
+        }
+    ]
+}

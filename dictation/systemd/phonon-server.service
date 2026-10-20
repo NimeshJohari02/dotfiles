@@ -1,0 +1,11 @@
+[Unit]
+Description=Local Phonon-2 speech recognition
+
+[Service]
+ExecStart=%h/.local/share/phonon-dictation/venv/bin/fermion serve phonon-2 --host 127.0.0.1 --port 8010 --threads 4
+Environment=HF_HUB_OFFLINE=1
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target

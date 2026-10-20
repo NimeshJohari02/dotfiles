@@ -1,0 +1,38 @@
+# Phonon-2 runs locally; the remote API below is on this computer only.
+engine = "whisper"
+state_file = "auto"
+
+[hotkey]
+enabled = false
+mode = "toggle"
+
+[audio]
+device = "default"
+sample_rate = 16000
+max_duration_secs = 120
+
+[whisper]
+mode = "remote"
+remote_endpoint = "http://127.0.0.1:8010"
+remote_model = "phonon-2"
+remote_timeout_secs = 120
+language = "en"
+
+[output]
+mode = "paste"
+paste_keys = "shift+insert"
+driver_order = ["wtype"]
+fallback_to_clipboard = true
+pre_type_delay_ms = 300
+
+[output.notification]
+on_recording_start = true
+on_recording_stop = true
+on_transcription = true
+
+[vad]
+enabled = true
+backend = "energy"
+
+[osd]
+enabled = false

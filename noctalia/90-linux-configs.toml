@@ -35,7 +35,7 @@ type = "caffeine"
 type = "nightlight"
 
 [[control_center.shortcuts]]
-type = "notification"
+type = "local/victus-fans:tile"
 
 [[control_center.shortcuts]]
 type = "power_profile"

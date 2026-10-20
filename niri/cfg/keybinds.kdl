@@ -1,5 +1,8 @@
 binds {
 
+    // Local Phonon-2 dictation: press once to record, again to transcribe and paste.
+    Mod+V repeat=false hotkey-overlay-title="Voice dictation: start / stop" { spawn-sh "~/.local/bin/voxtype record toggle"; }
+
     // ────────────── Keybindings ──────────────
     // https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
 
@@ -13,6 +16,7 @@ binds {
     Mod+B                               hotkey-overlay-title="Open Browser: Zen" { spawn "zen-browser"; }
 
     // --- Noctalia ---
+    Mod+Shift+V                         repeat=false hotkey-overlay-title="Open Clipboard History" { spawn "noctalia" "msg" "panel-toggle" "clipboard"; }
     Mod+Shift+Return                    hotkey-overlay-title="Open Wallpaper Selector: noctalia wallpaper toggle" { spawn-sh "noctalia msg panel-toggle wallpaper"; }
     Mod+S                               hotkey-overlay-title="Open Control Center: noctalia controlCenter" { spawn-sh "noctalia msg panel-toggle control-center"; }
     Mod+Shift+S                         hotkey-overlay-title="Open Settings: noctalia settings" { spawn-sh "noctalia msg settings-toggle"; }
@@ -75,7 +79,7 @@ binds {
     Mod+Shift+CTRL+Right                { move-column-to-monitor-right; }
     Mod+Shift+CTRL+UP                   { move-column-to-monitor-up; }
     Mod+Shift+CTRL+Down                 { move-column-to-monitor-down; }
-    Mod+Shift+V                         { switch-focus-between-floating-and-tiling; }
+    Mod+Ctrl+Shift+V                    { switch-focus-between-floating-and-tiling; }
 
     Mod+BracketLeft                     { consume-or-expel-window-left; }
     Mod+BracketRight                    { consume-or-expel-window-right; }

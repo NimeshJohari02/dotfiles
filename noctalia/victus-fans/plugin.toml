@@ -1,0 +1,11 @@
+id = "local/victus-fans"
+name = "Victus Fans"
+version = "1.0.0"
+plugin_api = 16
+author = "local"
+description = "Switch Victus cooling between firmware Auto and Max."
+icon = "propeller"
+
+[[shortcut]]
+id = "tile"
+entry = "tile.luau"

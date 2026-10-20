@@ -4,3 +4,8 @@ Personal Linux configuration files. The `niri/` directory contains the Niri setu
 
 To activate the Noctalia override, copy `noctalia/90-linux-configs.toml` to `~/.config/noctalia/`. Noctalia reads TOML files from that directory and applies its GUI-managed `~/.local/state/noctalia/settings.toml` as a later override.
 The `keyring/` directory documents the shared GNOME Keyring setup for Niri and COSMIC. It contains no keyring database or credentials.
+
+The `dictation/` directory contains the local Phonon-2/Voxtype configuration,
+user services, and [restore instructions](dictation/README.md). Press `Super+V`
+to start/stop voice dictation. The Niri bindings and Alacritty TOML include the
+clipboard and paste settings used by this setup.

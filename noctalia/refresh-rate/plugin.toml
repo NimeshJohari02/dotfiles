@@ -1,0 +1,18 @@
+id = "local/refresh-rate"
+name = "Refresh Rate"
+version = "1.0.0"
+plugin_api = 24
+author = "local"
+description = "Choose a supported refresh rate on Niri without changing resolution."
+icon = "device-desktop"
+dependencies = ["niri", "python3"]
+
+[[widget]]
+id = "rate"
+entry = "widget.luau"
+
+[[panel]]
+id = "panel"
+entry = "panel.luau"
+width = 460
+height = 360

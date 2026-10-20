@@ -1,5 +1,10 @@
 # Movie sharing with ReadyMedia
 
+**"Movie on my TV"** is the saved startup shortcut. The
+[movie workflow](WORKFLOW.md) records discovery, startup, English subtitles,
+firewall access, and cleanup. Setup also installs this workflow locally beside
+the server. The repository's `AGENTS.md` points coding agents to it.
+
 Streams original video files to a DLNA-capable TV over the home network. The TV
 decodes the video; the laptop serves the file without transcoding or mirroring.
 Only the selected movie directory is indexed. No movie files, subtitles,

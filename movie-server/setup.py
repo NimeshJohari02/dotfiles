@@ -108,6 +108,10 @@ Environment=LC_ALL=C.UTF-8
     unit += "Restart=on-failure\nRestartSec=5\nNice=10\n\n[Install]\nWantedBy=default.target\n"
     unit_path = config_home / "systemd/user/readymedia.service"
     save(unit_path, unit)
+    workflow = Path(__file__).with_name("WORKFLOW.md")
+    if workflow.is_file():
+        data_home = Path(os.environ.get("XDG_DATA_HOME", Path.home() / ".local/share"))
+        save(data_home / "readymedia/WORKFLOW.md", workflow.read_text())
     print(f"Configured: {config}\nService: {unit_path}\nSharing: {media}")
     if args.no_start:
         return

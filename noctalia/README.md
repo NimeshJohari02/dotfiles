@@ -6,6 +6,14 @@ Control Center shortcut grid. Weather is disabled. Noctalia 5.2.1 shows six
 shortcuts, so the final power-profile entry is hidden; use the Power sidebar.
 The large date card remains because this version cannot replace it through config.
 
+The sixth shortcut replaces DND with Victus fan control. Install the local plugin
+with `bash noctalia/setup-victus-fans.sh`, then copy the shortcut configuration
+above and reload Noctalia. It requires the existing `victus-backend.service`,
+Python 3, and permission to access `/run/victus-control/victus_backend.sock` (the `victus` group).
+Click **Fans Auto** / **Fans Max** to toggle firmware Auto and full-speed cooling.
+The tile checks the backend every three seconds, including changes from the
+Victus app. It reports failures without claiming a mode change succeeded.
+
 Install `kdeconnect`, and enable the integration while Noctalia is running:
 
 ```sh

@@ -20,6 +20,18 @@ The [movie-server setup](movie-server/README.md) shares local movies and SRT
 subtitles directly to a TV with ReadyMedia/DLNA. The [Noctalia setup](noctalia/README.md)
 also includes a local refresh-rate plugin for Niri, independent of package updates.
 
-Screenshot checklist: [screenshots/](screenshots/README.md).
+## Screenshots
+
+Noctalia control center with the Victus fan toggle:
+
+![Noctalia control center with fan toggle](screenshots/control-center.webp)
+
+Voxtype dictation after `Super+V`:
+
+![Voxtype dictation recording](screenshots/dictation.webp)
+
+Refresh-rate plugin panel:
+
+![Refresh-rate panel](screenshots/refresh-rate.webp)
 
 Licensed under [MIT](LICENSE). Vendored code under `awesome/` (lain, awesome-wm-widgets, freedesktop) keeps its upstream license.

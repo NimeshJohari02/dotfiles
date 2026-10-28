@@ -50,6 +50,7 @@ From the repository root:
 mkdir -p ~/.config/voxtype ~/.config/systemd/user
 cp dictation/voxtype.toml ~/.config/voxtype/config.toml
 cp dictation/systemd/*.service ~/.config/systemd/user/
+cp -r dictation/systemd/voxtype.service.d ~/.config/systemd/user/
 ```
 
 Copy `niri/cfg/keybinds.kdl` into `~/.config/niri/cfg/`, or merge its dictation
@@ -66,6 +67,20 @@ systemctl --user daemon-reload
 systemctl --user enable --now phonon-server.service voxtype.service
 voxtype status
 ```
+
+## Microphone
+
+Dictation always records from the laptop's built-in digital mic, even when
+Bluetooth earbuds are the system default. Earbud mics garble words and drop the
+earbuds into low-quality call audio. The override
+`systemd/voxtype.service.d/laptop-mic.conf` sets `PIPEWIRE_NODE` to the built-in
+mic. Voxtype records through PipeWire's ALSA plugin, so `PULSE_SOURCE` has no
+effect here. Other apps keep using the system default mic.
+
+To pick a different mic, list sources with `pactl list short sources`, put its
+name in the override, then run
+`systemctl --user daemon-reload && systemctl --user restart voxtype`.
+On this laptop `Mic1` is the built-in digital mic and `Mic2` is the headset jack.
 
 ## Troubleshooting
 
